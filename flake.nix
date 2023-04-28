@@ -26,7 +26,7 @@
     app.${system}.default = {
       description = "A simple hello world application";
       type = "service";
-      start = "${pkgs.hello}/bin/hello";
+      start = "${self.packages.${system}.hello}/bin/hello";
     };
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
